@@ -52,7 +52,7 @@ pipeline {
           }
           dir ('./charts/demo_APP_NAME') {
             container('maven') {
-              sh "make tag"
+              // sh "make tag"
             }
           }
           container('maven') {
