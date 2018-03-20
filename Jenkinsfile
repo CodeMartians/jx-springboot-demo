@@ -3,8 +3,8 @@ pipeline {
       label "jenkins-maven"
     }
     environment {
-      ORG               = 'jenkinsx'
-      APP_NAME          = 'demo_APP_NAME'
+      ORG               = 'codemartians'
+      APP_NAME          = 'alien-springboot'
       GIT_CREDS         = credentials('jenkins-x-git')
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
       GIT_USERNAME      = "$GIT_CREDS_USR"
@@ -52,7 +52,7 @@ pipeline {
           }
           dir ('./charts/demo_APP_NAME') {
             container('maven') {
-              // sh "make tag"
+              sh "make tag"
             }
           }
           container('maven') {
